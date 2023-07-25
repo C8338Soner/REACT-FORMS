@@ -1,10 +1,27 @@
-import React from "react";
-import logo from "./logo.svg";
-import { ContactPage } from "./ContactPage";
-import "./App.css";
+import React from 'react';
+import logo from './logo.svg';
+import { ContactPage, contactPageAction } from './ContactPage';
+import { ThankYouPage } from './ThankYouPage';
+import './App.css';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Navigate to="contact" />,
+  },
+  {
+    path: '/contact',
+    element: <ContactPage />,
+    action: contactPageAction,
+  },
+  {
+    path: '/thank-you/:name',
+    element: <ThankYouPage />,
+  },
+]);
 function App() {
-  return <ContactPage />;
+  return <RouterProvider router = {router}/>;
 }
 
 export default App;
