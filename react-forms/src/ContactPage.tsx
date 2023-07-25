@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent } from 'react';
 
 type Contact = {
   name: string;
@@ -10,21 +9,21 @@ type Contact = {
 
 export function ContactPage() {
   const [contact, setContact] = useState<Contact>({
-    name: "",
-    email: "",
-    reason: "",
-    notes: "",
+    name: '',
+    email: '',
+    reason: '',
+    notes: '',
   });
+  const fieldStyle = 'flex flex-col mb-2';
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log('Submitted details:', contact);
   }
-  const fieldStyle = "flex flex-col mb-2";
+
   return (
     <div className="flex flex-col py-10 max-w-md mx-auto">
       <h2 className="text-3xl font-bold underline mb-3">Contact Us</h2>
-      <p className="mb-3">
-        If you enter your details we'll get bac to you soon as we can
-      </p>
+      <p className="mb-3">If you enter your details we'll get back to you as soon as we can.</p>
       <form onSubmit={handleSubmit}>
         <div className={fieldStyle}>
           <label htmlFor="name">Your name</label>
@@ -59,17 +58,14 @@ export function ContactPage() {
         </div>
         <div className={fieldStyle}>
           <label htmlFor="notes">Additional notes</label>
-          <select
+          <textarea
             id="notes"
             value={contact.notes}
             onChange={(e) => setContact({ ...contact, notes: e.target.value })}
           />
         </div>
         <div>
-          <button
-            type="submit"
-            className="mt-2 h-10 px-6 font-semibold bg-black text-white"
-          >
+          <button type="submit" className="mt-2 h-10 px-6 font-semibold bg-black text-white">
             Submit
           </button>
         </div>
