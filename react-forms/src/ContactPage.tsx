@@ -1,4 +1,3 @@
-import { FormEvent } from 'react';
 import { Form, ActionFunctionArgs, redirect } from 'react-router-dom';
 
 type Contact = {

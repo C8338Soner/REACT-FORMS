@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import { ContactPage, contactPageAction } from './ContactPage';
 import { ThankYouPage } from './ThankYouPage';
 import './App.css';
