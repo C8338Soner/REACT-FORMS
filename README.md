@@ -22,4 +22,4 @@ module.exports = {
   plugins: [require('@tailwindcss/forms')],
 }; -->
 
-Create a file called ContactPage.tsx in the src folder sonerhjkhkh
+Create a file called ContactPage.tsx in the src folder sonerhjkhkhtgrtr
